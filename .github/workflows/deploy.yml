@@ -1,0 +1,40 @@
+name: Deploy VSCode extension on Marketplace
+
+on:
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  # Hosted GitHub runners have 7 GB of memory available, let's use 6 GB
+  NODE_OPTIONS: --max-old-space-size=6144
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "yarn"
+          cache-dependency-path: yarn.lock
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --non-interactive
+
+      - name: Install vsce
+        run: yarn global add vsce
+
+      - name: Package extension to .vsix
+        run: vsce package
+
+      - name: Publish extension to Marketplace
+        run: vsce publish minor -p ${{ secrets.VSCE_PAT }}
