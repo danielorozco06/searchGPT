@@ -11,7 +11,7 @@ A simple Visual Studio Code extension that allows you to select words in your co
 
 ## Installation
 
-1. Search for 'Word Meaning' in the Visual Studio Code Extensions Marketplace.
+1. Search for 'searchGPT' in the Visual Studio Code Extensions Marketplace.
 2. Click on the 'Install' button to install the extension.
 3. Set environment variable `OPENAI_API_KEY` to your OpenAI API key.
 
