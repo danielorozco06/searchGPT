@@ -2,7 +2,7 @@
   "name": "searchgpt",
   "displayName": "searchGPT",
   "description": "VSCode extension to search, translate, etc; word selected in the source code using OpenAI API",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "danielorozco06",
   "engines": {
     "vscode": "^1.87.0"
