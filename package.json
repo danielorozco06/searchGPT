@@ -6,6 +6,10 @@
   "engines": {
     "vscode": "^1.87.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielorozco06/searchGPT.git"
+  },
   "categories": [
     "Other"
   ],
@@ -29,10 +33,10 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run compile",
+    "vscode:prepublish": "yarn compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "pnpm run compile && pnpm run lint",
+    "watch": "tsc --watch -p ./",
+    "pretest": "yarn compile && yarn lint",
     "lint": "eslint src --ext ts",
     "test": "vscode-test"
   },
