@@ -3,5 +3,5 @@
 # Increment the patch version only if on main branch.
 current_branch=$(git branch --show-current)
 if [ "$current_branch" = "main" ]; then
-  yarn version --patch
+  yarn version --no-git-tag-version --patch
 fi
