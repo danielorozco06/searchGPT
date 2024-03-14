@@ -2,7 +2,7 @@
   "name": "searchgpt",
   "displayName": "searchGPT",
   "description": "VSCode extension to search, translate, etc; word selected in the source code using OpenAI API",
-  "version": "0.1.3",
+  "version": "0.1.128",
   "publisher": "danielorozco06",
   "icon": "images/icon.png",
   "engines": {
@@ -41,9 +41,7 @@
     "pretest": "yarn compile && yarn lint",
     "lint": "eslint src --ext ts",
     "test": "vscode-test",
-    "version:patch": "yarn version --patch",
-    "version:minor": "yarn version --minor",
-    "version:major": "yarn version --major"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
@@ -54,6 +52,7 @@
     "@vscode/test-cli": "^0.0.6",
     "@vscode/test-electron": "^2.3.9",
     "eslint": "^8.56.0",
+    "husky": "^9.0.11",
     "typescript": "^5.3.3"
   },
   "dependencies": {
