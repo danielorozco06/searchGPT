@@ -4,8 +4,7 @@
 current_branch=$(git branch --show-current)
 if [ "$current_branch" = "main" ]; then
   # Check for any changes excluding version bump in package.json
-  if ! git diff --quiet HEAD -- . ':(exclude)package.json' ||
-    git diff HEAD -- package.json | grep -qv '"version":'; then
+  if git diff HEAD -- package.json | grep -qv '"version":'; then
     echo "Changes detected. Incrementing version."
     yarn version --patch
   else
