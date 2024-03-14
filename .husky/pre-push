@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Increment the patch version only if on main branch
+# Increment the patch version only if on main branch.
 current_branch=$(git branch --show-current)
 if [ "$current_branch" = "main" ]; then
-  yarn version --patch --no-git-tag-version
+  yarn version --patch --no-git-tag-version -m "Bump version to %s"
 fi
