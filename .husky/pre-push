@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
-# Increment the patch version only if on main branch and there are meaningful changes.
+# Increment the patch version only if on main branch.
 current_branch=$(git branch --show-current)
 if [ "$current_branch" = "main" ]; then
-  # Check for any changes excluding version bump in package.json
-  if git diff HEAD -- package.json | grep -qv '"version":'; then
-    echo "Changes detected. Incrementing version."
-    yarn version --patch
-  else
-    echo "No meaningful changes detected. Skipping version increment."
-  fi
+  yarn version --patch
 fi
